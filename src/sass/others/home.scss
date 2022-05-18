@@ -60,7 +60,7 @@ header {
 .header-links {
 	display: flex;
 	flex-direction: row;
-	margin-top: 80px;
+	margin-top: 40px;
 	align-items: center;
 	a {
 		&:hover {
@@ -92,4 +92,65 @@ header {
 		margin: 0;
 		animation: arrow 1.25s ease-out infinite;
 	}
+}
+
+#main-1 {
+	h2 {
+		font-weight: normal;
+		text-transform: uppercase;
+		font-size: 3em;
+		margin-bottom: 40px;
+	}
+	section {
+		font-size: 1.1em;
+		height: 100vh;
+		background-color: var(--bg);
+		padding: 150px 150px;
+	}
+}
+.grid-2 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	.profile-pic {
+		width: 400px;
+		height: 400px;
+		clip-path: circle(50%);
+		background: var(--accent) url("/assets/profile.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin: 0 auto;
+	}
+	.side {
+		width: 50%;
+	}
+}
+
+.flex-icons {
+    display: flex;
+    flex-direction: row;
+	justify-content: flex-start;
+    width: 100%;
+    padding: 20px 0;
+	width: 80%;
+	float: right;
+	img {
+		width: 50px;
+		margin-inline: 20px;
+		opacity: .8;
+		transition: .2s;
+		&:hover {
+			transform: scale(.9);
+			opacity: 1;
+		}
+	}
+}
+.social .flex-icons a img {
+    opacity: .3;
+    transition: .2s;
+}
+.social .flex-icons a img:hover {
+    opacity: 1;
 }

@@ -13,8 +13,12 @@
 :root {
     --background: #fff;
     --text: #333;
+    --bg: #eee; 
     --accent: #DF6BF2;
     --accent-rgb: 223, 107, 242;
+}
+html {
+    scroll-behavior: smooth;
 }
 body {
     margin: 0;
@@ -22,7 +26,7 @@ body {
 }
 
 p {
-    margin-block: 10px;
+    margin-block: 20px;
 }
 
 .accent {

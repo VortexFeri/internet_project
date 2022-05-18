@@ -18,7 +18,7 @@ colorSwitch.addEventListener('click', () => {
     root.style.setProperty('--accent-rgb', '0, 179, 60');
 })
 
-const navLinks = document.querySelectorAll('.nav-links a:not(.current)');
+const navLinks = document.querySelectorAll('.nav-links a');
 
 function wrap(el, wrapper) {
     el.parentNode.insertBefore(wrapper, el);
@@ -30,7 +30,7 @@ navLinks.forEach(link => {
     var newText = "";
     link.innerHTML = ""
     for (let i = 0; i < oldText.length; i++) {
-        newText += "<span class='animated-text'>" + oldText[i] + "</span>";
+        newText += `<span data-text='${oldText[i]}' class='animated-text letter-${i}'>${oldText[i]}</span>`;
     };
     link.innerHTML = newText;
 })

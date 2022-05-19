@@ -1,3 +1,9 @@
-@import "others/global.scss";
-@import "others/nav.scss";
-@import "others/home.scss";
+@use 'abstracts/variables';
+
+@use 'base/reset';
+@use 'base/typography';
+
+@use 'layouts/navigation';
+@use 'layouts/home.scss';
+
+@use 'components/buttons';

@@ -1,0 +1,21 @@
+:root {
+    --background: #fff;
+    --text: #333;
+    --bg: #eee; 
+    --accent-rgb: 223, 107, 242;
+}
+
+:root.dark {
+    --background: #333;
+    --text: #ccc;
+    --bg: #333340; 
+    --accent-rgb: 223, 107, 242;
+}
+
+:root[data-color-theme = magenta] {
+    --accent: #DF6BF2;
+}
+
+:root[data-color-theme = green] {
+    --accent: #5ed639;
+}

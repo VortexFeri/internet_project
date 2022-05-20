@@ -3,19 +3,20 @@
     --text: #333;
     --bg: #eee; 
     --accent-rgb: 223, 107, 242;
+    --accent: #b42574;
 }
 
 :root.dark {
     --background: #333;
     --text: #ccc;
-    --bg: #333340; 
+    --bg: #1f1f1f; 
     --accent-rgb: 223, 107, 242;
 }
 
 :root[data-color-theme = magenta] {
-    --accent: #DF6BF2;
+    --accent: #b42574;
 }
 
 :root[data-color-theme = green] {
-    --accent: #5ed639;
+    --accent: #36c576;
 }

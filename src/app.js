@@ -1,37 +1,38 @@
-const themeSwitch = document.getElementById('theme-switch');
+const themeSwitch = document.querySelector('#theme-switch input');
+const themelabel = document.getElementById('theme-switch');
 const colorSwitch = document.getElementById('color-switch');
 const header = document.querySelector('header');
 const root = document.querySelector(':root');
 const arrow = document.querySelector('#scroll-link img');
 const icons = document.querySelectorAll('.social img');
 
-themeSwitch.addEventListener('click', () => {
-    themeSwitch.classList.toggle('dark');
-    root.classList.toggle('dark');
-        
-    if (root.classList.contains('dark')) {
+function switchTheme() {
+    if (document.cookie == 'dark=true') {
+        storeDark();
+        themeSwitch.classList.add('dark');
+        themelabel.classList.add('dark');
+        root.classList.add('dark');
         arrow.setAttribute('src', '/assets/arrow-light.png');
-        header.style.setProperty('background-image', 'url("/assets/dark2.jpg")');
+        header.style.setProperty('background-image', 'url("/assets/home-dark.jpg")');
         icons.forEach(icon => {
-            let aux = icon.getAttribute('src');
-            aux = aux.substring(0, aux.length - 4) + "-white" + aux.substring(aux.length - 4, aux.length);
-            icon.setAttribute('src', aux);
+            icon.style.filter = 'invert()';
         })
     }
     else {
+        themeSwitch.classList.remove('dark');
+        themelabel.classList.remove('dark');
+        root.classList.remove('dark');
         arrow.setAttribute('src', '/assets/arrow-dark.png');
-        header.style.setProperty('background-image', 'url("/assets/pexels-henry-&-co-1939485.jpg")');
+        header.style.setProperty('background-image', 'url("/assets/home-light.jpg")');
         icons.forEach(icon => {
-            let aux = icon.getAttribute('src');
-            aux = aux.substring(0, aux.length - 10) + "" + aux.substring(aux.length - 4, aux.length);
-            icon.setAttribute('src', aux);
+            icon.style.filter = 'unset';
         })
     }
-
-})
+}
 
 colorSwitch.addEventListener('click', () => {
-    if (root.getAttribute('data-color-theme') == 'magenta')
+    if (root.getAttribute('data-color-theme') == 'magenta' ||
+        root.getAttribute('data-color-theme') == null)
         root.setAttribute('data-color-theme', 'green');
     else
         root.setAttribute('data-color-theme', 'magenta')
@@ -44,10 +45,29 @@ animLinks.forEach(link => {
     var newText = "";
     link.innerHTML = ""
     for (let i = 0; i < oldText.length; i++) {
-        if (oldText[i] == " ") 
+        if (oldText[i] == " ")
             newText += `<span data-text='&nbsp;' class='animated-text letter-${i}'>&nbsp;</span>`;
         else
             newText += `<span data-text='${oldText[i]}' class='animated-text letter-${i}'>${oldText[i]}</span>`;
     };
     link.innerHTML = newText;
 })
+
+function storeDark() {
+    document.cookie = `dark=${themeSwitch.checked}`;
+};
+
+themeSwitch.addEventListener('change', function () {
+    storeDark();
+    switchTheme();
+});
+
+window.onload = () => {
+    if (document.cookie == 'dark=true') {
+        themeSwitch.setAttribute('checked', true);
+    }
+    else {
+        themeSwitch.removeAttribute('checked');
+    }
+    switchTheme();
+}

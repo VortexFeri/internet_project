@@ -16,6 +16,7 @@
     margin-left: 0;
     text-align: center;
     overflow: hidden;
+    user-select: none;
     &::after {
         content: '\21E9';
         transform: rotateX(90deg);

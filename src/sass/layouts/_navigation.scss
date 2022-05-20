@@ -68,17 +68,20 @@ nav {
 }
 #theme-switch {
     margin: 0 initial;
-    background: url('/assets/sun-svgrepo-com.svg');
+    background: url('../../assets/sun-svgrepo-com.svg');
     width: 40px;
     height: 40px;
     border-radius: 100%;
     border: none;
     transition: 0.2s;
     cursor: pointer;
+
+    input {
+        visibility: hidden;
+    }
 }
 #color-switch {
     margin: 0 initial;
-    background: url('/assets/sun-svgrepo-com.svg');
     width: 40px;
     height: 40px;
     border-radius: 100%;
@@ -89,7 +92,7 @@ nav {
     background-color: var(--accent);
 }
 #theme-switch.dark {
-    background: url('/assets/moon-svgrepo-com.svg');
+    background: url('../../assets/moon-svgrepo-com.svg');
 }
 
 a {

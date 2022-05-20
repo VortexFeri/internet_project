@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;
+
 footer {
     display: flex;
     justify-content: space-between;
@@ -5,6 +7,11 @@ footer {
     background: linear-gradient(#222, #222), linear-gradient(var(--accent), var(--accent));
     background-blend-mode: hard-light;
     padding: 50px 100px 5px;
+
+    @include media(medium-large) {
+        flex-direction: column;
+    }
+
 	.logo {
 		font-weight: bold;
 	}

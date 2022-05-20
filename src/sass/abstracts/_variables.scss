@@ -20,3 +20,20 @@
 :root[data-color-theme = green] {
     --accent: #36c576;
 }
+
+$media: (
+    small: 640px,
+    medium: 830px,
+    medium-large: 1200px,
+    large: 1400px,
+);
+
+@mixin media($breakpoint) {
+    @each $breakpoints, $size in $media {
+        @if $breakpoint==$breakpoints {
+            @media screen and (max-width: $size) {
+                @content;
+            }
+        }
+    }
+}

@@ -1,10 +1,17 @@
+@use '../abstracts/variables' as *;
+
 header {
+    position: relative;
     height: 100vh;
     background-image: url("../assets/home-light.jpg");
     filter: brightness(1.02);
     background-size: cover;
     display: grid;
     grid-template-columns: 0.6fr 0.4fr;
+    @include media(large) {
+        grid-template-columns: unset;
+        // grid-template-rows: 0.8f;
+    }
 }
 .header-content {
     display: flex;
@@ -12,6 +19,22 @@ header {
     justify-content: center;
     max-width: 900px;
     padding: 0 150px;
+
+    @include media(medium) {
+        max-width: unset;
+        padding: 30px;
+        width: fit-content;
+        text-align: center;
+        align-items: center;
+
+        h1 {
+            font-size: clamp(3rem, 1vw, 8em);
+        }
+        h1, p {
+            color: #ccc;
+        }
+    }
+
     h1 {
         width: min-content;
         position: relative;
@@ -29,6 +52,7 @@ header {
             background-color: var(--accent);
         }
     }
+
     p {
         font-size: 1.25em;
     }
@@ -42,6 +66,13 @@ header {
     background-size: cover;
     background-position: 50%;
     filter: brightness(.35);
+    
+    @include media(large) {
+        position: absolute;
+        // height: 50%;
+        bottom: 0;
+        z-index: -1;
+    }
 }
 .header-links {
     display: flex;
@@ -89,13 +120,25 @@ header {
     section {
         font-size: 1.1em;
         background-color: var(--bg);
-        padding: 150px 150px 110px 150px;
+        padding-block: 150px 110px;
     }
 }
+
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 40px;
+    padding-inline: 150px;
+
+    @include media(medium-large) {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        width: 100%;
+        padding: 50px;
+        justify-content: center;
+    }
+
     .profile-pic {
         width: 400px;
         height: 400px;
@@ -113,6 +156,15 @@ header {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            @include media(medium) {
+                flex-direction: column;
+                align-items: flex-start;
+                .flex-icons {
+                    margin: 20px -20px 5px;
+                    padding: 0;
+                    width: 100%;
+                }
+            }
         }
         .wrapper.no-width {
             width: fit-content;

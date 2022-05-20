@@ -123,32 +123,3 @@ header {
         }
     }
 }
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background: linear-gradient(#222, #222), linear-gradient(var(--accent), var(--accent));
-    background-blend-mode: hard-light;
-    padding: 50px 100px 5px;
-	.logo {
-		font-weight: bold;
-	}
-    * {
-        color: #ddd;
-    }
-    .side:last-child {
-
-        a {
-            margin-right: 30px;
-            margin-bottom: 30px;
-            font-weight: bold;
-			&:hover {
-				text-decoration: underline;
-			}
-        }
-    }
-    hr {
-        opacity: .5;
-    }
-}

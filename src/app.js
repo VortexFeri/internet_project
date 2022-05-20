@@ -4,28 +4,28 @@ const colorSwitch = document.getElementById('color-switch');
 const header = document.querySelector('header');
 const root = document.querySelector(':root');
 const arrow = document.querySelector('#scroll-link img');
-const icons = document.querySelectorAll('.social img');
+const icons = document.querySelectorAll('.icon');
 
 function switchTheme() {
     if (themeSwitch.checked) {
         themeSwitch.classList.add('dark');
         themelabel.classList.add('dark');
         root.classList.add('dark');
-        arrow.setAttribute('src', 'assets/arrow-light.png');
-        header.style.setProperty('background-image', 'url("assets/home-dark.jpg")');
-        icons.forEach(icon => {
-            icon.style.filter = 'invert()';
-        })
+        arrow != null ? arrow.setAttribute('src', 'assets/arrow-light.png') : '';
+        header != null ? header.style.setProperty('background-image', 'url("assets/home-dark.jpg")') : '';
+        icons != null ? icons.forEach(icon => {
+            icon.style.filter = 'invert(1)';
+        }) : '';
     }
     else {
         themeSwitch.classList.remove('dark');
         themelabel.classList.remove('dark');
         root.classList.remove('dark');
-        arrow.setAttribute('src', 'assets/arrow-dark.png');
-        header.style.setProperty('background-image', 'url("assets/home-light.jpg")');
-        icons.forEach(icon => {
+        arrow != null ? arrow.setAttribute('src', 'assets/arrow-dark.png') : '';
+        header != null ? header.style.setProperty('background-image', 'url("assets/home-light.jpg")') : '';
+        icons != null ? icons.forEach(icon => {
             icon.style.filter = 'unset';
-        })
+        }) : '';
     }
 }
 

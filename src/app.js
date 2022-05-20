@@ -7,13 +7,12 @@ const arrow = document.querySelector('#scroll-link img');
 const icons = document.querySelectorAll('.social img');
 
 function switchTheme() {
-    if (document.cookie == 'dark=true') {
-        storeDark();
+    if (themeSwitch.checked) {
         themeSwitch.classList.add('dark');
         themelabel.classList.add('dark');
         root.classList.add('dark');
-        arrow.setAttribute('src', '/assets/arrow-light.png');
-        header.style.setProperty('background-image', 'url("/assets/home-dark.jpg")');
+        arrow.setAttribute('src', 'assets/arrow-light.png');
+        header.style.setProperty('background-image', 'url("assets/home-dark.jpg")');
         icons.forEach(icon => {
             icon.style.filter = 'invert()';
         })
@@ -22,8 +21,8 @@ function switchTheme() {
         themeSwitch.classList.remove('dark');
         themelabel.classList.remove('dark');
         root.classList.remove('dark');
-        arrow.setAttribute('src', '/assets/arrow-dark.png');
-        header.style.setProperty('background-image', 'url("/assets/home-light.jpg")');
+        arrow.setAttribute('src', 'assets/arrow-dark.png');
+        header.style.setProperty('background-image', 'url("assets/home-light.jpg")');
         icons.forEach(icon => {
             icon.style.filter = 'unset';
         })

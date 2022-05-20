@@ -1,0 +1,39 @@
+.animated-link:hover .animated-text {
+    transform: translateY(calc(-100% - 5px));
+}
+.animated-link {
+    width: 100%;
+}
+.animated-text {
+    display: inline-block;
+    position: relative;
+}
+.animated-text::after {
+    color: var(--accent);
+    content: attr(data-text);
+    position: absolute;
+    bottom: calc(-100% - 5px);
+    left: 0;
+}
+
+@for $i from 0 through 20 {
+    a:hover .animated-text.letter-#{$i} {
+        transition-delay: (0s + 0.05 * $i);
+        transition-duration: 0.25s
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(5px) scale(1.25);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}

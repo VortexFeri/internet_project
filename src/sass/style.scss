@@ -1,9 +1,12 @@
 @use 'abstracts/variables';
+@use 'abstracts/animations';
 
 @use 'base/reset';
 @use 'base/typography';
 
 @use 'layouts/navigation';
 @use 'layouts/home.scss';
+@use 'layouts/footer';
 
 @use 'components/buttons';
+@use 'components/icons';

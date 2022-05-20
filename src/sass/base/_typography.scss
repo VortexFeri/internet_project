@@ -8,19 +8,23 @@ p {
     background-color: var(--accent);
     color: var(--accent)
 }
+
 .text.accent {
     font-weight: bold;
     background-color: initial;
 }
 
 * {
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     color: var(--text);
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
     line-height: 100%;
 }
 
+a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    // width: 75px;
+    text-align: center;
+}
 

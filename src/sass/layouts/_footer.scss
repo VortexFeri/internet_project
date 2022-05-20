@@ -1,0 +1,24 @@
+.flex-icons {
+    position: relative;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px 0;
+    width: 80%;
+    img {
+        width: 50px;
+        margin-inline: 20px;
+        opacity: .8;
+        transition: 0.2s;
+        &:hover {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+    }
+}
+.social .flex-icons a img {
+    opacity: .3;
+    transition: 0.2s;
+}
+.social .flex-icons a img:hover {
+    opacity: 1;
+}

@@ -2,23 +2,24 @@
     --background: #fff;
     --text: #333;
     --bg: #eee; 
-    --accent-rgb: 223, 107, 242;
     --accent: #b42574;
+    --accent-rgb: 180, 37, 116;
 }
 
 :root.dark {
     --background: #333;
     --text: #ccc;
     --bg: #1f1f1f; 
-    --accent-rgb: 223, 107, 242;
 }
 
 :root[data-color-theme = magenta] {
     --accent: #b42574;
+    --accent-rgb: 180, 37, 116;
 }
 
 :root[data-color-theme = green] {
     --accent: #36c576;
+    --accent-rgb: 54, 197, 118;
 }
 
 $media: (

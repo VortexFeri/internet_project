@@ -17,7 +17,8 @@
 }
 
 @for $i from 0 through 20 {
-    a:hover .animated-text.letter-#{$i} {
+    a:hover .animated-text.letter-#{$i}, 
+    button:hover .animated-text.letter-#{$i} {
         transition-delay: (0s + 0.05 * $i);
         transition-duration: 0.25s
     }

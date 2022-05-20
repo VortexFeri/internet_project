@@ -18,13 +18,13 @@
             </a>
             <section class="nav-links">
                 <div class="wrapper">
-                    <a href="index.html" class="current animated-link">About</a>
+                    <a href="index.html" class="animated-link">About</a>
                 </div>
                 <div class="wrapper">
                     <a href="projects.html" class="animated-link">Projects</a>
                 </div>
                 <div class="wrapper">
-                    <a href="contact.html" class="animated-link">Contact</a>
+                    <a href="contact.html" class="current animated-link">Contact</a>
                 </div>
                 <div class="wrapper">
                     <a href="reviews.html" class="animated-link">Reviews</a>
@@ -36,14 +36,34 @@
                     <input type="checkbox" id="darkmode">
                 </label>
                 <div class="wrapper">
-                    <a href="https://www.dropbox.com/s/r25pvx1p7s6boz7/Carnu%20Ferencz%20-%20CV.pdf?dl=1" class="cv-download">CV</a>
+                    <a href="https://www.dropbox.com/s/r25pvx1p7s6boz7/Carnu%20Ferencz%20-%20CV.pdf?dl=1" class="fill-animate">CV</a>
                 </div>
             </section>
         </nav>
 
-        <main id="main-2">
+        <main>
 
-            
+            <section class="grid-2">
+
+                <form autocomplete="off" class="form side" method="get" action="javascript:formSubmit()">
+                    <h2>Contact me</h2>
+                    <p>Do you wish to discuss business or maybe you're just down for a chat? Don't hesitate to fill the form down below and I will contact you ASAP!</p>
+
+                    <label for="name">Name</label>
+                    <input required placeholder="What should I call you?" type="text" id="name" autocomplete="off">
+
+                    <label for="mail">E-mail</label>
+                    <input required placeholder="Leave your e-mail so I can contact you" type="email" id="mail" autocomplete="off">
+
+                    <label for="message">Message</label>
+                    <textarea required placeholder="Tell me what you would like to talk about..." autocomplete="off" name="message" id="message" oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
+
+                    <div class="wrapper no-width">
+                        <button type="submit" class="fill-animate submit">Submit</button>
+                    </div>
+                </form>
+
+            </section>
 
         </main>
 
@@ -70,6 +90,12 @@
                 <a href="">Codepen</a>
             </div>
         </footer>
+
+        <div class="full-overlay"></div>
+        <div class="form-thanks-container">
+            <p>Thanks for your message!</p>
+            <button onclick="dismiss()" class="dismiss">X</button>
+        </div>
 
     </body>
 </html>

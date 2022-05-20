@@ -32,9 +32,12 @@ html {
 
 /* Set core body defaults */
 body {
+  position: relative;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
 }
 
 /* A elements that don't have a class get default styles */

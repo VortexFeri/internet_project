@@ -17,14 +17,13 @@ p {
 * {
     font-family: 'Poppins', sans-serif;
     color: var(--text);
-    line-height: 100%;
+    line-height: 1.25;
 }
 
 a {
     display: inline-block;
     position: relative;
     text-decoration: none;
-    // width: 75px;
     text-align: center;
 }
 

@@ -70,3 +70,23 @@ window.onload = () => {
     }
     switchTheme();
 }
+
+const form = document.querySelector('form');
+const formMessage = document.querySelector('.form-thanks-container');
+const overlay = document.querySelector('.full-overlay');
+
+function formSubmit() {
+    formMessage.classList.remove('leave');
+    formMessage.style.display = 'flex';
+    overlay.style.display = 'block';
+    form.reset();
+}
+function dismiss() {
+    formMessage.classList.add('leave');
+    setTimeout(
+        () => {
+            formMessage.style.display = 'none';
+            overlay.style.display = 'none';
+        }, 200
+    )
+}

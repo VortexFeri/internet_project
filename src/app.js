@@ -1,8 +1,10 @@
 // THEME SWITCHER
 
-const themeSwitch = document.querySelector('#theme-switch input'),
+const 
+    themeSwitch = document.querySelector('#theme-switch input'),
     colorSwitch = document.getElementById('color-switch'),
-    root = document.querySelector(':root')
+    root = document.querySelector(':root'),
+    colorOption = document.querySelectorAll('.color-switch');
 
 function switchTheme() {
     if (getCookie('dark') == 'true') {
@@ -14,12 +16,30 @@ function switchTheme() {
 }
 
 colorSwitch.addEventListener('click', () => {
-    if (getCookie('color') == 'magenta')
-        root.setAttribute('data-color-theme', 'green');
-    else
-        root.setAttribute('data-color-theme', 'magenta');
-    storeColor();
+    colorSwitch.classList.toggle('show');
 })
+
+colorOption.forEach(opt => {
+    opt.addEventListener('click', () => {
+        colorSwitch.classList.toggle('show');
+        root.setAttribute('data-color-theme', opt.getAttribute('data-color'));
+        storeColor();
+    })
+})
+
+window.onload = () => {
+    if (getCookie('dark') == 'true') {
+        themeSwitch.setAttribute('checked', true);
+    }
+    else {
+        themeSwitch.removeAttribute('checked');
+    }
+    switchTheme();
+
+    root.setAttribute('data-color-theme', getCookie('color'))
+}
+
+// LINK ANIMATION
 
 const animLinks = document.querySelectorAll('.animated-link');
 
@@ -48,17 +68,8 @@ themeSwitch.addEventListener('change', function () {
     switchTheme();
 });
 
-window.onload = () => {
-    if (getCookie('dark') == 'true') {
-        themeSwitch.setAttribute('checked', true);
-    }
-    else {
-        themeSwitch.removeAttribute('checked');
-    }
-    switchTheme();
 
-    root.setAttribute('data-color-theme', getCookie('color'))
-}
+// FORM SCRIPT
 
 const form = document.querySelector('form');
 const formMessage = document.querySelector('.form-thanks-container');

@@ -2,8 +2,20 @@
     --background: #fff;
     --text: #333;
     --bg: #eee; 
-    --accent: #b42574;
-    --accent-rgb: 180, 37, 116;
+    --accent: var(--magenta);
+    --accent-rgb: var(--magenta-rgb);
+
+    --magenta: #b42574;
+    --magenta-rgb: 180, 37, 116;
+
+    --green: #36c576;
+    --green-rgb: 54, 197, 118;
+
+    --blue: #1283c5;
+    --blue-rgb: 18, 131, 197;
+
+    --orange: #e47922;
+    --orange-rgb: 228, 121, 34;
 }
 
 :root.dark {
@@ -12,14 +24,24 @@
     --bg: #1f1f1f; 
 }
 
-:root[data-color-theme = magenta] {
-    --accent: #b42574;
-    --accent-rgb: 180, 37, 116;
+:root[data-color-theme = '1'] {
+    --accent: var(--magenta);
+    --accent-rgb: var(--magenta-rgb);
 }
 
-:root[data-color-theme = green] {
-    --accent: #36c576;
-    --accent-rgb: 54, 197, 118;
+:root[data-color-theme = '2'] {
+    --accent: var(--green);
+    --accent-rgb: var(--green-rgb);
+}
+
+:root[data-color-theme = '3'] {
+    --accent: var(--blue);
+    --accent-rgb: var(--blue-rgb);
+}
+
+:root[data-color-theme = '4'] {
+    --accent: var(--orange);
+    --accent-rgb: var(--orange-rgb);
 }
 
 $media: (

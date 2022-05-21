@@ -146,34 +146,33 @@ input:-webkit-autofill {
             opacity: .6;
             animation-duration: 2s;
         }
-    }
+    }    
+}
 
-    svg {
-        z-index: -1;
-        position: absolute;
-        top: 40%;
-        animation: rot 36s linear infinite;
-        max-width: 90vw;
+svg {
+    z-index: -1;
+    position: absolute;
+    top: 40%;
+    max-width: 90vw;
+    animation: rot 36s linear infinite;
 
-        @keyframes rot {
-            25% {
-                transform: rotateZ(90deg) scale(1.5);
-            }
-            50% {
-                transform: rotateZ(180deg);
-            }
-            75% {
-                transform: rotateZ(270deg) scale(1.5);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+    @keyframes rot {
+        25% {
+            transform: rotateZ(90deg) scale(1.5);
         }
-
-        path {
-            stroke: var(--accent);
-            opacity: .2;
+        50% {
+            transform: rotateZ(180deg);
+        }
+        75% {
+            transform: rotateZ(270deg) scale(1.5);
+        }
+        100% {
+            transform: rotate(360deg);
         }
     }
-    
+
+    path {
+        stroke: var(--accent);
+        opacity: .2;
+    }
 }

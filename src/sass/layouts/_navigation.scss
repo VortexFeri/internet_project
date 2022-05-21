@@ -103,13 +103,17 @@ nav {
     input {
         visibility: hidden;
     }
+
+    &:hover {
+        opacity: .8;
+    }
 }
 
 .dark #theme-switch {
     background: url('../assets/moon.svg');
 }
 
-#color-switch {
+#color-switch, .color-switch {
     margin: 0 initial;
     width: 40px;
     height: 40px;
@@ -119,8 +123,54 @@ nav {
     cursor: pointer;
     background: unset;
     background-color: var(--accent);
+
+    &:hover {
+        opacity: .8;
+    }
 }
 #theme-switch.dark {
     background: url('../assets/moon-svgrepo-com.svg');
 }
 
+.color-switch:nth-child(1) {
+    background-color: var(--magenta);
+}
+.color-switch:nth-child(2) {
+    background-color: var(--green);
+}
+.color-switch:nth-child(3) {
+    background-color: var(--blue);
+}
+.color-switch:nth-child(4) {
+    background-color: var(--orange);
+}
+
+#color-options {
+    background-color: var(--bg);
+    position: absolute;
+    top: 100px;
+    width: fit-content;
+    padding: 20px 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 16px 4px rgba(var(--accent-rgb), .2);
+    transform: translateX(calc(-50% + 20px)) scale(0);
+    transition: .2s;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 25px;
+        background-color: var(--bg);
+        top: -25px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+    }
+}
+
+#color-switch.show + #color-options {
+    transform: translateX(calc(-50% + 20px)) scale(1);
+}

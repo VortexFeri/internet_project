@@ -1,0 +1,123 @@
+@use '../abstracts/variables' as *;
+
+.flex {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    // flex: 1 2 300px;
+    // row-gap: 40px;
+    // margin-inline: auto;
+    // justify-content: center;
+
+    & > * {
+        margin-inline: 20px;
+        // align-self: flex-start;
+    }
+}
+
+.iframe-div {
+    display: flex;
+    justify-content: space-evenly;
+    // flex-wrap: wrap;
+    // height: fit-content;
+    margin-bottom: 40px;
+
+    @include media(medium-large) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        background: var(--background);
+        display: flex;
+        width: 400px;
+        flex-direction: column;
+        height: 600px;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: .2s;
+        box-shadow: 4px 4px 8px rgba(var(--accent-rgb), .2);
+
+        @include media(medium-large) {
+            width: 90% !important;
+            flex-direction: row;
+            height: 300px;
+            margin-bottom: 20px;
+
+            .image {
+                height: 100% !important;
+                width: 30%;
+                aspect-ratio: 4/3;
+                
+                img {
+                    width: 100%;
+                    max-width: 500px;
+                    object-position: top !important;
+                }
+            }
+        }
+
+        &:hover {
+            opacity: .6;
+            cursor: pointer;
+        }
+
+        &.hidden {
+            flex-direction: row;
+            width: 50%;
+            height: 300px;
+
+        }
+
+        .content {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            padding: 20px;
+
+            h3 {
+                color: var(--accent);
+            }
+        }
+
+        .image {
+            height: 50%;
+            
+            img {
+                height: 100%;
+                width: 100%;
+                object-position: top left;
+                object-fit: cover;
+            }
+        }
+
+        &.hidden .image {
+            height: 100%;
+            width: 30%;
+            aspect-ratio: 4/3;
+            
+            img {
+                width: 100%;
+                max-width: 500px;
+                object-position: top;
+            }
+        }
+    }
+
+    iframe {
+        // display: none;
+        width:60%;
+        height: 600px;
+        border-radius: 20px;
+        padding: 20px;
+        background-color: var(--background);
+
+        @include media(medium-large) {
+            width: 90%;
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+}

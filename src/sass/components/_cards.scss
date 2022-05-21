@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;
+
 .small-icon-card {
     display: flex;
     background-color: var(--background);

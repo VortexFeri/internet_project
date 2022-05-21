@@ -13,6 +13,11 @@ header {
         // grid-template-rows: 0.8f;
     }
 }
+
+.dark header {
+    background: url('../assets/home-dark.jpg');
+}
+
 .header-content {
     display: flex;
     flex-direction: column;
@@ -71,6 +76,8 @@ header {
         z-index: -1;
     }
 }
+
+
 .header-links {
     display: flex;
     flex-direction: row;
@@ -105,6 +112,10 @@ header {
         padding: 0;
         margin: 0;
     }
+}
+
+.dark #scroll-link img {
+    filter: invert(1);
 }
 
 main {

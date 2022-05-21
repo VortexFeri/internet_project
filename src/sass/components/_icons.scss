@@ -15,6 +15,12 @@
         }
     }
 }
+
+.dark .flex-icons img,
+.dark .icon {
+    filter: invert(1);
+}
+
 .social .flex-icons a img {
     opacity: .3;
     transition: 0.2s;

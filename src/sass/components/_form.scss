@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;
+
 .form {
     display: flex;
     flex-direction: column;
@@ -116,6 +118,7 @@ input:-webkit-autofill {
 }
 
 .form-deco {
+
     h1 {
         font-size: 3.5em;
         color: var(--accent);
@@ -174,6 +177,10 @@ svg {
     path {
         stroke: var(--accent);
         opacity: .2;
+    }
+
+    @include media(medium-large) {
+        display: none;
     }
 }
 

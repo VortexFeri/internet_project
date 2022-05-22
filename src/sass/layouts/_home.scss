@@ -8,6 +8,8 @@ header {
     background-size: cover;
     display: grid;
     grid-template-columns: 0.6fr 0.4fr;
+    overflow: hidden;
+
     @include media(large) {
         grid-template-columns: unset;
         // grid-template-rows: 0.8f;
@@ -135,6 +137,7 @@ main {
     grid-template-columns: 1fr 1.5fr;
     gap: 40px;
     padding-inline: 150px;
+    // overflow: hidden !important;
 
     @include media(medium-large) {
         display: flex;
@@ -157,6 +160,7 @@ main {
     }
     .side {
         align-self: center;
+
         .flex-row {
             display: flex;
             flex-direction: row;

@@ -49,7 +49,7 @@ window.onload = () => {
     }
     switchTheme();
 
-    root.setAttribute('data-color-theme', getCookie('color'))
+    root.setAttribute('data-color-theme', getCookie('color'));
 }
 
 // LINK ANIMATION
@@ -118,7 +118,7 @@ for(let i = 0; i < projectCard.length; i++) {
     })
 }
 
-// REVIREW NAME GENERATOR
+// REVIREW SCRIP
 
 var reviewNames = document.querySelectorAll('.review-card .name');
 const firstNames = ['Will', 'George', 'Jennifer', 'John', 'Hector', 'Anne', 'Mary', 'Christine', 'Dick', 'Rue'];
@@ -132,14 +132,15 @@ const reviewSection = document.querySelector('.reviews');
 var reviewsNo = reviewNames.length;
 
 function addReview() {
-    const form = document.querySelector('.review-form').elements;
+    const form = document.querySelector('.review-form');
     reviewsNo++;
     reviewSection.innerHTML += 
     `
-    <div class="review-card">
-        <img src="https://picsum.photos/100?random=${reviewsNo}">
-        <h3 class="name">${form[0].value} ${form[1].value}</h3>
-        <p>${form[2].value}</p>
-    </div>
-    `;
+        <div class="review-card">
+            <img src="https://picsum.photos/100?random=${reviewsNo}">
+            <h3 class="name">${form.elements['firstName'].value} ${form.elements['secondName'].value}</h3>
+            <p>${form.elements['message'].value}</p>
+        </div>
+        `;
+    form.reset();
 }

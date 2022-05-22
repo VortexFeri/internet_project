@@ -176,3 +176,15 @@ svg {
         opacity: .2;
     }
 }
+
+.form.review-form {
+    margin: auto;
+    margin-bottom: 50px;
+
+    .wrapper {
+        width: 200px;
+    }
+    button {
+        padding: 20px;
+    }
+}

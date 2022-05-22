@@ -1,3 +1,16 @@
+function getCookie(name) {
+    let cookieArray = document.cookie.split(';');
+
+    for (var i = 0; i < cookieArray.length; i++) {
+        var curCookie = cookieArray[i].split('=');
+
+        if(name == curCookie[0].trim()) {
+            return decodeURIComponent(curCookie[1]);
+        }
+    }
+
+    return null;
+}
 // THEME SWITCHER
 
 const 
@@ -91,26 +104,42 @@ function dismiss() {
     )
 }
 
-function getCookie(name) {
-    let cookieArray = document.cookie.split(';');
 
-    for (var i = 0; i < cookieArray.length; i++) {
-        var curCookie = cookieArray[i].split('=');
-
-        if(name == curCookie[0].trim()) {
-            return decodeURIComponent(curCookie[1]);
-        }
-    }
-
-    return null;
-}
+// PROJECT CARDS
 
 const projectCard = document.querySelectorAll('.project-card');
 const iframe = document.querySelectorAll('iframe');
+const fullscreenButton = document.querySelectorAll('.fullscreen-button');
 
 for(let i = 0; i < projectCard.length; i++) {
     projectCard[i].addEventListener('click', () => {
         iframe[i].classList.toggle('hidden');
         projectCard[i].classList.toggle('hidden');
     })
+}
+
+// REVIREW NAME GENERATOR
+
+var reviewNames = document.querySelectorAll('.review-card .name');
+const firstNames = ['Will', 'George', 'Jennifer', 'John', 'Hector', 'Anne', 'Mary', 'Christine', 'Dick', 'Rue'];
+const surNames = ['Bald', 'Downey', 'Wayne', 'Richards', 'Bossman', 'Hathaway', 'Lawrence', 'Robbinson', 'Johnson', 'Wilson'];
+
+reviewNames.forEach(name => {
+    name.innerHTML = firstNames[Math.floor(Math.random() * firstNames.length)] + " " + surNames[Math.floor(Math.random() * surNames.length)];
+})
+
+const reviewSection = document.querySelector('.reviews');
+var reviewsNo = reviewNames.length;
+
+function addReview() {
+    const form = document.querySelector('.review-form').elements;
+    reviewsNo++;
+    reviewSection.innerHTML += 
+    `
+    <div class="review-card">
+        <img src="https://picsum.photos/100?random=${reviewsNo}">
+        <h3 class="name">${form[0].value} ${form[1].value}</h3>
+        <p>${form[2].value}</p>
+    </div>
+    `;
 }

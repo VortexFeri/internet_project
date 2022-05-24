@@ -20,7 +20,7 @@ const
     colorOption = document.querySelectorAll('.color-switch');
 
 function switchTheme() {
-    if (getCookie('dark') == 'true') {
+    if (themeSwitch.checked) {
         root.classList.add('dark');
     }
     else {
